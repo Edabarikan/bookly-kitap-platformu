@@ -1,0 +1,159 @@
+﻿@model IEnumerable<WebApplication1.Models.BlogPost>
+
+@{
+    ViewData["Title"] = "Blog";
+}
+
+<h3>Bookly Blog</h3>
+
+<br />
+<br />
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-12 mb-4">
+            <div class="post d-flex flex-row mb-4">
+                <div class="post-image me-4">
+                    <img src="~/KapakResimleri/images/post-item1.jpg" alt="post image" class="img-fluid rounded-3" style="width: 250px; height: auto;">
+                </div>
+                <div class="post-content">
+                    <a href="#" class="fs-6 text-primary">02-12-2025</a>
+                    <h4 class="card-title mb-2 text-capitalize text-dark">
+                        <a href="@Url.Action("Details", "Blog", new { id = 1 })">Kitapların Büyülü Dünyası</a>
+                    </h4>
+                    <p class="mb-2">
+                        Kitaplar, bizi farklı zamanlara ve mekanlara götüren büyülü kapılardır. Okurken hayal gücümüz gelişir, yeni bakış açıları kazanırız. Peki, sizin için en unutulmaz kitap hangisi?
+                        <br><br>
+                        Kitaplar, farklı kültürlere açılan birer penceredir. Farklı yazarların kalemlerinden dökülen kelimeler, bize yeni dünyalar sunar. Okuma alışkanlığı kazanmak ise zamanla daha keyifli hale gelir. Çoğu insan, başlangıçta okumaktan zorlanabilir, ancak bir kez bir kitabın içine girdiğinizde, okuma süreci bir zevke dönüşebilir. Özellikle edebiyat kitapları, insanın hayal gücünü ateşler.
+                        <br><br>
+                        Romanlar, tarihsel anlatımlar, şiirler veya kişisel gelişim kitapları; her bir tür, farklı bir okuma deneyimi sunar. Her kitabın kendine özgü bir havası vardır. Bir kitap bitmeden bir diğerine geçmek, çoğu zaman okuyucuyu daha da derinlemesine bir düşünceye sevk eder. Kitap okumak, sadece bilgi edinmek için değil, aynı zamanda ruhsal bir yolculuğa çıkmak içindir.
+                        <br><br>
+                        Kitapların içinde kaybolmak, bazen gerçek dünyadan uzaklaşmak demektir. Birçok insan okuma alışkanlığını hayatına entegre ettiğinde, kitapların gücüyle dünyalarını değiştirebilir. Kitaplar her zaman yanınızda olabilir ve sizi hiç yalnız bırakmazlar. Peki, kitapların büyülü dünyasına siz de adım atmak ister misiniz?
+                       </p>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="col-md-12 mb-4">
+            <div class="post d-flex flex-row mb-4">
+                <div class="post-image me-4">
+                    <img src="~/KapakResimleri/images/post-item2.jpg" alt="post image" class="img-fluid rounded-3" style="width: 250px; height: auto;">
+                </div>
+                <div class="post-content">
+                    <a href="#" class="fs-6 text-primary">12-25-2024</a>
+                    <h4 class="card-title mb-2 text-capitalize text-dark">
+                        <a href="@Url.Action("Details", "Blog", new { id = 2 })">Kütüphane mi, Kitaplık mı?</a>
+                    </h4>
+                    <p class="mb-2">
+                        Kitapseverler için en büyük soru: Kitapları dijitalde mi yoksa basılı olarak mı saklamalı? Fiziksel kitapların kokusu mu yoksa e-kitapların pratikliği mi daha cazip? Karar sizin!
+                        <br><br>
+                        Kitaplar, bilginin zaman içinde aktarılması için önemli araçlardır. Ancak dijitalleşmenin artmasıyla birlikte, kitapların saklanma şekli de değişiyor. Kütüphaneler, yıllardır bilgilerin depolandığı yerler olarak biliniyor, ancak dijital kitaplıklar da hızla yükseliyor. Fiziksel kitaplar, kitapların içinde kaybolan bir deneyim sunar; o sayfaları çevirmek, yazarlara ait izleri hissedebilmek çok özel bir duygudur.
+                        <br><br>
+                        Öte yandan, e-kitaplar kolayca taşınabilir ve çok daha geniş bir kitap koleksiyonuna sahip olmanızı sağlar. Teknolojinin gelişmesiyle birlikte, e-kitaplar, tablet veya telefon gibi cihazlarda rahatlıkla okunabilir. Bu da okuma alışkanlıklarını değiştiren bir faktördür. Özellikle seyahat edenler için, dijital kitaplar çok daha pratik olabilir.
+                        <br><br>
+                        Her iki seçeneğin de avantajları vardır. Basılı kitaplar, nostaljik bir his uyandırırken, dijital kitaplar ise zaman ve mekân sınırı tanımaz. Peki, siz kitapları hangi formatta tercih ediyorsunuz? Dijital mi, yoksa fiziksel kitapları mı tercih edersiniz?
+                       </p>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="col-md-12 mb-4">
+            <div class="post d-flex flex-row mb-4">
+                <div class="post-image me-4">
+                    <img src="~/KapakResimleri/images/post-item3.jpg" alt="post image" class="img-fluid rounded-3" style="width: 250px; height: auto;">
+                </div>
+                <div class="post-content">
+                    <a href="#" class="fs-6 text-primary">01-18-2025</a>
+                    <h4 class="card-title mb-2 text-capitalize text-dark">
+                        <a href="@Url.Action("Details", "Blog", new { id = 3 })">Okuma Alışkanlığı Nasıl Kazanılır?</a>
+                    </h4>
+                    <p class="mb-2">
+                        Kitap okumaya zaman ayırmakta zorlanıyor musunuz? Günde sadece 10 dakika okuyarak bile büyük fark yaratabilirsiniz. İşte okuma alışkanlığı kazanmanın ipuçları
+                        <br><br>
+                        Okuma alışkanlığı kazanmak, bir disiplin işidir. Çoğu insan okuma isteği duysa da, günlük hayatın koşturmacasında zaman bulmak zor olabilir. Ancak küçük adımlarla bu alışkanlık kazanılabilir. Her gün belirli bir süre ayırarak, hatta 10 dakika bile okuma yaparak, zamanla okuma süresi artabilir.
+                        <br><br>
+                        Okuma alışkanlığını kazandığınızda, kitaplar hayatınızın bir parçası haline gelir. Bir kitap bitirildiğinde, bir sonraki kitabı seçmek de keyifli bir deneyim olur. Bu süreç, beyin için bir egzersiz gibi çalışır ve zihinsel sağlığı güçlendirir.
+                        <br><br>
+                        Kitaplar, farklı dünyalara açılan kapılardır. Okuma alışkanlığını kazandığınızda, hayal gücünüz genişler, dünyaya bakış açınız değişir. Okuma alışkanlığı kazandığınızda, sadece bilgi edinmekle kalmaz, aynı zamanda duygusal ve entelektüel gelişim sağlarsınız.
+                        <br><br>
+                        Küçük bir başlangıç yaparak, okuma alışkanlığını günlük hayatınıza katabilirsiniz. Peki, sizce okumaya başlamak için en iyi kitap türü nedir?
+                       </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-12 mb-4">
+            <div class="post d-flex flex-row mb-4">
+                <div class="post-image me-4">
+                    <img src="~/KapakResimleri/images/post-item4.jpg" alt="post image" class="img-fluid rounded-3" style="width: 250px; height: auto;">
+                </div>
+                <div class="post-content">
+                    <a href="#" class="fs-6 text-primary">01-30-2025</a>
+                    <h4 class="card-title mb-2 text-capitalize text-dark">
+                        <a href="@Url.Action("Details", "Blog", new { id = 4 })">Türüne Göre Kitap Seçimi</a>
+                    </h4>
+                    <p class="mb-2">
+                        Roman mı, kişisel gelişim mi, yoksa bilim kurgu mu? Doğru kitabı seçmek, okuma keyfini artırır. Peki, ruh halinize en uygun kitap türü hangisi?
+                        <br><br>
+                        Kitap türleri, farklı okuma deneyimleri sunar. Romanlar, bizi başka dünyalara götürürken, kişisel gelişim kitapları hayatımıza yön verir. Bilim kurgu kitapları ise hayal gücümüzü genişletir. Her okurun ilgi alanına göre kitap türü değişebilir.
+                        <br><br>
+                        Birçok kişi, hangi kitap türünü seçeceğine karar vermekte zorlanabilir. Ancak doğru türü seçmek, okuma deneyimini daha keyifli hale getirir. Özellikle ruh halinizin kitapseçiminiz üzerinde büyük bir etkisi vardır.
+                        <br><br>
+                        Eğer rahatlatıcı bir şeyler arıyorsanız, edebiyat ve romanlar harika bir seçim olabilir. Eğer zihinsel bir uyanış arıyorsanız, kişisel gelişim kitapları sizi doğru yolda ilerletebilir.
+                        <br><br>
+                        Bilim kurgu ise hayal gücünüzü son derece geliştirebilir. Seçim yaparken, sadece türün adını değil, yazarın tarzını da göz önünde bulundurmalısınız.
+                       </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .post-image {
+            width: 250px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .post-content {
+            flex: 1;
+        }
+
+            .post-content h4 {
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .post-content a {
+                text-decoration: none;
+            }
+
+                .post-content a:hover {
+                    text-decoration: underline;
+                }
+
+            .post-content .text-decoration-underline {
+                color: #007bff;
+            }
+
+                .post-content .text-decoration-underline:hover {
+                    color: #0056b3;
+                }
+
+        .post {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: flex-start;
+        }
+    </style>
+}

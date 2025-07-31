@@ -1,0 +1,29 @@
+﻿@using WebApplication1.Models.ViewModels
+@model KitapEkle_VM
+
+<form method="post" asp-action="Ekle" enctype="multipart/form-data">
+    <table class="table table-striped">
+        <tr>
+            <td><label asp-for="KitapAdi"></label></td>
+            <td><input asp-for=KitapAdi /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Fiyat"></label></td>
+            <td><input asp-for=Fiyat /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="KapakResmi"></label></td>
+            <td><input type="file" name="dosya"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="YazarID"></label></td>
+            <td><select asp-items="@Model.Yazarlar" asp-for="YazarID"></select> /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Aciklama"></label></td>
+            <td><textarea asp-for=Aciklama cols="60" rows="6"></textarea></td>
+        </tr>
+    </table>
+</form>
+
+

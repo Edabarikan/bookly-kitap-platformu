@@ -1,0 +1,67 @@
+﻿@model WebApplication1.Models.ViewModels.Kitap_VM
+
+@{
+    ViewData["Title"] = "Guncelle";
+}
+
+<h1>Kitap Bilgilerini Guncelle</h1>
+
+<h5>Güncellenecek bilgileri giriniz:</h5>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Guncelle" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- KitapID Hidden: KitapID bilgisi guncellenmeyecegi ancak guncellenecek olan kitabin 
+            verilerini tutmak icin ID'ye ihtiyacimiz olmasindan dolayi hidden.  -->
+            <input asp-for="KitapID" type="hidden" />
+
+            <div class="form-group">
+                <label asp-for="KitapAdi" class="control-label"></label>
+                <input asp-for="KitapAdi" class="form-control" />
+                <span asp-validation-for="KitapAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat" class="control-label"></label>
+                <input asp-for="Fiyat" class="form-control" />
+                <span asp-validation-for="Fiyat" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="KapakResmi" class="control-label"></label>
+                <img src="~/KapakResimleri/@Model.KapakResmi" width="240px" height="180px" />
+            </div>
+            <!-- Yeni kapak resmi secimi icin: -->
+            <div class="form-group">
+                <label asp-for="KapakResmi" class="control-label"></label>
+                <input asp-for="KapakResmi" name="dosya" type="file" class="form-control" />
+                <span asp-validation-for="KapakResmi" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Yazar" class="control-label"></label>
+                <select asp-for="Yazar" class="form-control" asp-items="ViewBag.Yazarlar"></select>
+                <span asp-validation-for="Yazar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Geri</a>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+

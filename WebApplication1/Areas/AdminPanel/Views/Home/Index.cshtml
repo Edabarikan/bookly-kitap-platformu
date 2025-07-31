@@ -1,0 +1,137 @@
+﻿@model WebApplication1.Areas.AdminPanel.Models.ViewModels.AdminDashboard_VM
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-tachometer-alt"></i> Admin Paneli
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-users"></i> Kullanıcılar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-book"></i> Kitaplar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+                <h1 class="h2">Genel Bilgiler</h1>
+
+                <div class="row">
+                    
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Toplam Kitap Sayısı</h5>
+                                <p class="card-text">@Model.ToplamKitap</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Son 7 Gün İçinde Yapılan Yorumlar</h5>
+                                <p class="card-text">@Model.Son7GunYorum</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Bugün Eklenen Kitaplar</h5>
+                                <p class="card-text">@Model.BugunEklenenKitap</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+       
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Kitap Dağılımı (Kategorilere Göre)</div>
+                            <div class="card-body">
+                                <canvas id="categoryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Aylık Eklenen Kitap Sayısı</div>
+                            <div class="card-body">
+                                <canvas id="monthlyChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Son Eklenen Kitaplar</div>
+                            <div class="card-body">
+                                <ul>
+                                    @foreach (var kitap in Model.SonEklenenKitaplar)
+                                    {
+                                        <li>@kitap</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Son Yapılan Yorumlar</div>
+                            <div class="card-body">
+                                <ul>
+                                    @foreach (var yorum in Model.SonYapilanYorumlar)
+                                    {
+                                        <li>@yorum</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx1 = document.getElementById('categoryChart').getContext('2d');
+        var categoryChart = new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.KategoriAdlari)),
+                datasets: [{
+                    data: @Html.Raw(Json.Serialize(Model.KategoriSayilari)),
+                    backgroundColor: ['red', 'blue', 'green', 'orange', 'purple']
+                }]
+            }
+        });
+
+    </script>
+</body>
+
+</html>

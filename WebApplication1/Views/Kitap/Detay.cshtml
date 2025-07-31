@@ -1,0 +1,26 @@
+﻿@model WebApplication1.Models.Kitap
+
+<table>
+    <tr>
+        <td><label asp-for="KitapAdi"></label></td>
+        <td>@Model.KitapAdi</td>
+    </tr>
+    <tr>
+        <td><label asp-for="Fiyat"></label></td>
+        <td>@Model.Fiyat</td>
+    </tr>
+    <tr>
+        <td><label asp-for="Aciklama"></label></td>
+        <td>@Model.Aciklama</td>
+    </tr>
+    <tr>
+        <td><label asp-for="Yazar"></label></td>
+        <td>@Model.Yazar.YazarAdSoyad</td>
+    </tr>
+    <tr>
+        <td><label asp-for="KapakResmi"></label></td>
+        <td><img src="~/KapakResimleri/@Model.KapakResmi" width="240px" height="180px" /></td>
+    </tr>
+</table>
+
+

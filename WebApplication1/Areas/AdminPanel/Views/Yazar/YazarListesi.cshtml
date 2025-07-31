@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebApplication1.Models.ViewModels.Yazar_VM>
+
+@{
+    ViewData["Title"] = "YazarListesi";
+}
+
+<h1>Yazarlar</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.YazarID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YazarAdSoyad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarAdSoyad)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
